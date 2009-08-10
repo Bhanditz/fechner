@@ -5,15 +5,15 @@
   S3 method to summarize objects of the class \code{fechner}.
 }
 \usage{
-\method{summary}{fechner}(object, level = 1, \dots)
+\method{summary}{fechner}(object, level = 2, \dots)
 }
 \arguments{
   \item{object}{a required object of class \code{fechner}, obtained
     from a call to the function \code{\link{fechner}}.}
 
-  \item{level}{an optional numeric, integer-valued and greater-equal
-    \eqn{1}, giving the level of comparison of the \eqn{S}-index and
-    the overall Fechnerian distance \eqn{G}.}
+  \item{level}{an optional numeric, integer-valued and greater than or
+    equal to \eqn{2}, giving the level of comparison of the
+    \eqn{S}-index and the overall Fechnerian distance \eqn{G}.}
 
   \item{\dots}{further arguments to be passed to or from other
     methods.  They are ignored in this function.}
@@ -21,34 +21,33 @@
 \details{
   The \code{summary} method outlines the results obtained from
   Fechnerian scaling analyses.  It computes the Pearson correlation
-  coefficient and the \eqn{C}-index
+  coefficient and the \eqn{C}-index (see \cite{Uenlue, Kiefer, and
+  Dzhafarov (2009)})
   \deqn{C = \frac{2\sum (S - G)^2}{\sum S^2 + \sum G^2}}{%
         C = (2 * sum((S - G)^2)) / (sum(S^2) + sum(G^2))}
   for specific (controlled by the argument \code{level}) stimuli pairs
   with their corresponding \eqn{S}-index and \eqn{G} values.
 
-  The \code{level} of comparison refers to the minimum number of edges
-  in geodesic loops plus \eqn{1}.  That is, choosing level \eqn{n}
-  means that comparison involves only those \eqn{S}-index and \eqn{G}
-  values that have geodesic loops containing not less than \eqn{n - 1}
-  edges.
+  The \code{level} of comparison refers to the minimum number of links
+  in geodesic loops.  That is, choosing level \eqn{n} means that
+  comparison involves only those \eqn{S}-index and \eqn{G} values that
+  have geodesic loops containing not less than \eqn{n} links.
 
   If there are no (off-diagonal) pairs of stimuli with geodesic loops
-  containing at least \code{level} \eqn{- 1} edges (in this case a
-  summary is not possible), \code{summary.fechner} stops with an error
-  message.
+  containing at least \code{level} links (in this case a summary is
+  not possible), \code{summary.fechner} stops with an error message.
 
   The function \code{summary.fechner} returns an object of the class
   \code{summary.fechner} (see \sQuote{Value}), for which a
   \code{print} method, \code{\link{print.summary.fechner}}, is
-  provided.  Individual summary information details such as individual
-  stimuli pairs with their corresponding \eqn{S}-index and \eqn{G}
+  provided.  Specific summary information details such as individual
+  stimuli pairs and their corresponding \eqn{S}-index and \eqn{G}
   values can be accessed through assignment (see \sQuote{Examples}).
 }
 \value{
   If the arguments \code{object} and \code{level} are of required
   types, and if there are (off-diagonal) pairs of stimuli with
-  geodesic loops containing at least \code{level} \eqn{- 1} edges,
+  geodesic loops containing at least \code{level} links,
   \code{summary.fechner} returns a named list, of the class
   \code{summary.fechner}, consisting of the following four components:
 
@@ -79,10 +78,10 @@
   cumulation theory and subjective metrics. \emph{Journal of
   Mathematical Psychology}, \bold{51}, 290--304.
 
-  Kiefer, T. and Uenlue, A. and Dzhafarov, E. N.
+  Uenlue, A. and Kiefer, T. and Dzhafarov, E. N.
   (2009) Fechnerian scaling in \R: The package \pkg{fechner}.
-  Manuscript submitted for publication.
-  \url{http://www.math.uni-augsburg.de/~uenlueal/}
+  \emph{Journal of Statistical Software}, \bold{31}(6), 1--24.
+  URL \url{http://www.jstatsoft.org/v31/i06/}.
 }
 \seealso{
   \code{\link{plot.fechner}}, the S3 method for plotting objects of
@@ -98,7 +97,7 @@
 ## Fechnerian scaling of dataset \link{wish}
 f.scal.wish <- fechner(wish)
 
-## results are summarized for comparison levels 1 and 5
+## results are summarized for comparison levels 2 and 5
 summary(f.scal.wish)
 summary(f.scal.wish, level = 5)
 

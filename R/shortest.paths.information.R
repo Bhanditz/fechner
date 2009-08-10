@@ -12,7 +12,7 @@ function(M){
 	weight.distances <- matrix(nrow = n, ncol = n)  # matrix of the weight-based lengths of the shortest paths from source vertices
 	                                                # (row stimuli) to target vertices (column stimuli) (in Fechnerian scaling context,
 	                                                # matrices of the oriented Fechnerian distances of the first and second kind)
-	edge.distances <- matrix(nrow = n, ncol = n)  # matrix of the edge-based (graph-theoretic) lengths of the shortest paths
+	edge.distances <- matrix(nrow = n, ncol = n)  # matrix of the edge/link based (graph-theoretic) lengths of the shortest paths
 	                                              # from source vertices (row stimuli) to target vertices (column stimuli)
 	predecessors <- matrix(nrow = n, ncol = n)  # matrix of the predecessors of the column stimuli in shortest paths from the row stimuli
 	                                            # (as source vertices) to the column stimuli (as target vertices)

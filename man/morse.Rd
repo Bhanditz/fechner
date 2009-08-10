@@ -68,9 +68,10 @@ morse
   theory and subjective metrics.  \emph{Journal of Mathematical
   Psychology}, \bold{51}, 290--304.
 
-  Kiefer, T. and Uenlue, A. and Dzhafarov, E. N. (2009) Fechnerian
-  scaling in \R: The package \pkg{fechner}.  Manuscript submitted for
-  publication.  \url{http://www.math.uni-augsburg.de/~uenlueal/}
+  Uenlue, A. and Kiefer, T. and Dzhafarov, E. N.
+  (2009) Fechnerian scaling in \R: The package \pkg{fechner}.
+  \emph{Journal of Statistical Software}, \bold{31}(6), 1--24.
+  URL \url{http://www.jstatsoft.org/v31/i06/}.
 }
 \seealso{
   \code{\link{check.data}} for checking data format;

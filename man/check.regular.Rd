@@ -31,7 +31,7 @@ check.regular(X, type = c("probability.different", "percent.same",
   probability-different and percent-same formats, and imply regular
   minimality and regular maximality checks, respectively.
   \code{"reg.minimal"} and \code{"reg.maximal"} can be specified to
-  force checking regular minimality and regular maximality,
+  force checking for regular minimality and regular maximality,
   respectively, independent of the used dataset.  In particular,
   \code{"reg.minimal"} and\code{"reg.maximal"} are to be used for
   datasets that are properly in the general format.
@@ -45,8 +45,8 @@ check.regular(X, type = c("probability.different", "percent.same",
   equality (PSEs) are assigned identical labels, leaving intact the
   labeling of the rows and relabeling the columns with their
   corresponding PSEs.  If the data \code{X} do not satisfy regular
-  minimality/maximality, \code{check.regular} stops with respective
-  error messages.  The latter give information about parts of \code{X}
+  minimality/maximality, \code{check.regular} produces respective
+  messages.  The latter give information about parts of \code{X}
   violating that condition.
 
   Regular minimality/maximality is a fundamental property of
@@ -94,7 +94,7 @@ check.regular(X, type = c("probability.different", "percent.same",
   \item{in.canonical.form}{logical.  If \code{TRUE}, the
     permutation of the columns used to obtain the canonical
     representation of \code{X} is the identity; that is, the
-    original data \code{X} already are in the canonical form.}
+    original data \code{X} are already in the canonical form.}
 }
 \author{
   Thomas Kiefer \email{thomas.kiefer@student.uni-augsburg.de},
@@ -110,10 +110,10 @@ check.regular(X, type = c("probability.different", "percent.same",
   cumulation theory and subjective metrics. \emph{Journal of
   Mathematical Psychology}, \bold{51}, 290--304.
 
-  Kiefer, T. and Uenlue, A. and Dzhafarov, E. N.
+  Uenlue, A. and Kiefer, T. and Dzhafarov, E. N.
   (2009) Fechnerian scaling in \R: The package \pkg{fechner}.
-  Manuscript submitted for publication.
-  \url{http://www.math.uni-augsburg.de/~uenlueal/}
+  \emph{Journal of Statistical Software}, \bold{31}(6), 1--24.
+  URL \url{http://www.jstatsoft.org/v31/i06/}.
 }
 \seealso{
   \code{\link{check.data}} for checking data format;
@@ -130,12 +130,10 @@ check.regular(wish)
 regMin
 check.regular(regMin)
 
-\dontrun{
 ## dataset \link{noRegMin} does satisfy neither regular minimality nor
 ## regular maximality
 check.regular(noRegMin, type = "probability.different")
 check.regular(noRegMin, type = "reg.maximal")
-}
 
 ## dataset \link{morse} satisfies regular maximality in canonical form
 check.regular(morse, type = "percent.same")

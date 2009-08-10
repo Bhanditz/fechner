@@ -8,23 +8,23 @@ function(X, format = c("probability.different", "percent.same", "general")){
 
 	format <- match.arg(format)
 	if ((data.class(X) != "matrix") && (data.class(X) != "data.frame"))
-    	stop("data must be matrix or data frame")
+		return(message("data must be matrix or data frame"))
     if (dim(X)[1] != dim(X)[2])
-    	stop("data must have same number of rows and columns")
+    	return(message("data must have same number of rows and columns"))
 	M <- as.matrix(X)
   	if (mode(M) != "numeric")
-		stop("data must be numbers")
+		return(message("data must be numbers"))
 	if (any(!is.finite(M)))
-		stop("data must be finite, i.e., not be NA, NaN, Inf, or -Inf")
+		return(message("data must be finite, i.e., not be NA, NaN, Inf, or -Inf"))
 	# preceding queries constitute the "general" data format
 	# additional queries for the "probability-different" and "percent-same" data formats are:
 	if (format == "probability.different"){
 		if (any(M < 0) || any(M > 1))
-			stop("data must be greater-equal 0 and less-equal 1")
+			return(message("data must be greater-equal 0 and less-equal 1"))
 	}
 	if (format == "percent.same"){
 		if (any(M < 0) || any(M > 100))
-			stop("data must be greater-equal 0 and less-equal 100")
+			return(message("data must be greater-equal 0 and less-equal 100"))
 	}
 
 	# labeling of the rows and columns
@@ -51,14 +51,14 @@ function(X, format = c("probability.different", "percent.same", "general")){
 	# (3) if rownames exist and colnames do not; rownames are assigned as colnames
 	if (!is.null(rownames(M)) && is.null(colnames(M)))  
 		colnames(M) <- rownames(M) 
-	# (4) if both rownames and colnames exist but do not coincide; stops with an error message
+	# (4) if both rownames and colnames exist but do not coincide; produces a respective message
 	if (!identical(rownames(M), colnames(M)))
-		stop("if labeling of both the rows and columns is provided manually, the same labeling must be used")
+		return(message("if labeling of both the rows and columns is provided manually, the same labeling must be used"))
 
 	# checking duplicate names
 	for (i in 1:n){
 		if (charmatch(colnames(M)[i], colnames(M)) == 0)
-			stop(paste("duplicate name is found: ", colnames(M)[i], sep = ""))
+			return(message(paste("duplicate name is found: ", colnames(M)[i], sep = "")))
 	}
 
 	return(M)

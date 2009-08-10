@@ -17,8 +17,8 @@
   \tabular{ll}{
     Package: \tab \pkg{fechner}\cr
     Type: \tab Package\cr
-    Version: \tab 1.0-0\cr
-    Date: \tab 2009-01-31\cr
+    Version: \tab 1.0-1\cr
+    Date: \tab 2009-08-10\cr
     License: \tab \acronym{GPL} (>= 2)
   }
   Fechnerian scaling of discrete object (or stimulus) sets provides a
@@ -35,7 +35,7 @@
   \pkg{fechner} provides functions for checking the required data
   format and the fundamental regular minimality/maximality condition.
   These concepts are explained in detail in the paper about the
-  \pkg{fechner} package by \cite{Kiefer, Uenlue, and Dzhafarov
+  \pkg{fechner} package by \cite{Uenlue, Kiefer, and Dzhafarov
   (2009)}, and in the theoretical papers by \cite{Dzhafarov and
   Colonius (2006, 2007)} (see \sQuote{References}).
 
@@ -72,8 +72,9 @@
   theory and subjective metrics.  \emph{Journal of Mathematical
   Psychology}, \bold{51}, 290--304.
 
-  Kiefer, T. and Uenlue, A. and Dzhafarov, E. N. (2009) Fechnerian
-  scaling in \R: The package \pkg{fechner}.  Manuscript submitted for
-  publication. \url{http://www.math.uni-augsburg.de/~uenlueal/}
+  Uenlue, A. and Kiefer, T. and Dzhafarov, E. N.
+  (2009) Fechnerian scaling in \R: The package \pkg{fechner}.
+  \emph{Journal of Statistical Software}, \bold{31}(6), 1--24.
+  URL \url{http://www.jstatsoft.org/v31/i06/}.
 }
 \keyword{package}

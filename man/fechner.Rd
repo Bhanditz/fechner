@@ -4,16 +4,16 @@
 \concept{discrete object sets}
 \title{Main Function For Fechnerian Scaling}
 \description{
-  \code{fechner} provides all the Fechnerian scaling computations.  It
-  is the main function of this package.
+  \code{fechner} provides the Fechnerian scaling computations.  It is
+  the main function of this package.
 }
 \usage{
 fechner(X, format = c("probability.different", "percent.same", "general"),
         compute.all = FALSE, check.computation = FALSE)
 }
 \arguments{
-  \item{X}{a required square matrix or data frame of numeric data.  No
-    \code{NA}, \code{NaN}, \code{Inf}, or \code{-Inf} values are
+  \item{X}{a required square matrix or data frame of numeric data.
+    No \code{NA}, \code{NaN}, \code{Inf}, or \code{-Inf} values are
     allowed.}
 
   \item{format}{an optional character string giving the data format
@@ -46,9 +46,9 @@ fechner(X, format = c("probability.different", "percent.same", "general"),
   general data format.  Note that for \code{"percent.same"}, the data
   must satisfy regular maximality, for \code{"probability.different"}
   and \code{"general"}, regular minimality (otherwise function
-  \code{fechner} stops with respective error messages).  In
-  particular, data in the general format may possibly need to be
-  transformed manually prior to calling the function \code{fechner}.
+  \code{fechner} produces respective messages).  In particular, data
+  in the general format may possibly need to be transformed manually
+  prior to calling the function \code{fechner}.
 
   If \code{compute.all = TRUE} and \code{check.computation = TRUE},
   the performed check computes the difference \sQuote{overall
@@ -109,8 +109,8 @@ fechner(X, format = c("probability.different", "percent.same", "general"),
     first kind; must be read from left to right for the first kind,
     and from right to left for the second kind.}
   \item{graph.lengths.of.geodesic.loops}{a matrix of the
-    graph-theoretic (edge-based) lengths of the geodesic loops (of the
-    first kind).}
+    graph-theoretic (edge/link based) lengths of the geodesic loops
+    (of the first kind).}
   \item{S.index}{a matrix of the generalized \sQuote{Shepardian}
     dissimilarity (or S-index) values.  An S-index value is defined as
     the psychometric length of the loop between a row stimulus and a
@@ -147,21 +147,21 @@ fechner(X, format = c("probability.different", "percent.same", "general"),
   \item{geodesic.loops.1}{a data frame of the geodesic loops of the
     first kind.}
   \item{graph.lengths.of.geodesic.chains.1}{a matrix of the
-    graph-theoretic (edge-based) lengths of the geodesic chains of the
-    first kind.}
+    graph-theoretic (edge/link based) lengths of the geodesic chains
+    of the first kind.}
   \item{graph.lengths.of.geodesic.loops.1}{a matrix of the
-    graph-theoretic (edge-based) lengths of the geodesic loops of the
-    first kind.}
+    graph-theoretic (edge/link based) lengths of the geodesic loops of
+    the first kind.}
   \item{geodesic.chains.2}{a data frame of the geodesic chains of the
     second kind.}
   \item{geodesic.loops.2}{a data frame of the geodesic loops of the
     second kind.}
   \item{graph.lengths.of.geodesic.chains.2}{a matrix of the
-    graph-theoretic (edge-based) lengths of the geodesic chains of the
-    second kind.}
+    graph-theoretic (edge/link based) lengths of the geodesic chains
+    of the second kind.}
   \item{graph.lengths.of.geodesic.loops.2}{a matrix of the
-    graph-theoretic (edge-based) lengths of the geodesic loops of the
-    second kind.}
+    graph-theoretic (edge/link based) lengths of the geodesic loops of
+    the second kind.}
   \item{S.index}{the same as in case of short computation; see above.
     (last component of long computation list)}
 }
@@ -179,10 +179,10 @@ fechner(X, format = c("probability.different", "percent.same", "general"),
   cumulation theory and subjective metrics. \emph{Journal of
   Mathematical Psychology}, \bold{51}, 290--304.
 
-  Kiefer, T. and Uenlue, A. and Dzhafarov, E. N.
+  Uenlue, A. and Kiefer, T. and Dzhafarov, E. N.
   (2009) Fechnerian scaling in \R: The package \pkg{fechner}.
-  Manuscript submitted for publication.
-  \url{http://www.math.uni-augsburg.de/~uenlueal/}
+  \emph{Journal of Statistical Software}, \bold{31}(6), 1--24.
+  URL \url{http://www.jstatsoft.org/v31/i06/}.
 }
 \seealso{
   \code{\link{check.data}} for checking data format;
@@ -251,13 +251,13 @@ f.scal.subspace.long.mo$check[2]
 ## for all (off-diagonal) pairs of stimuli
 plot(f.scal.subspace.long.mo)
 ## for all (off-diagonal) pairs of stimuli with geodesic loops
-## containing at least 3 edges
-plot(f.scal.subspace.long.mo, level = 4)
+## containing at least 3 links
+plot(f.scal.subspace.long.mo, level = 3)
 
 ## corresponding summaries, including Pearson correlation and C-index
 summary(f.scal.subspace.long.mo)
 ## in particular, accessing detailed summary through assignment
-detailed.summary.mo <- summary(f.scal.subspace.long.mo, level = 4)
+detailed.summary.mo <- summary(f.scal.subspace.long.mo, level = 3)
 str(detailed.summary.mo)
 
 ##
@@ -326,13 +326,13 @@ f.scal.subspace.long.wi$check[2]
 ## for all (off-diagonal) pairs of stimuli
 plot(f.scal.subspace.long.wi)
 ## for all (off-diagonal) pairs of stimuli with geodesic loops
-## containing at least 5 edges
-plot(f.scal.subspace.long.wi, level = 6)
+## containing at least 5 links
+plot(f.scal.subspace.long.wi, level = 5)
 
 ## corresponding summaries, including Pearson correlation and C-index
 summary(f.scal.subspace.long.wi)
 ## in particular, accessing detailed summary through assignment
-detailed.summary.wi <- summary(f.scal.subspace.long.wi, level = 6)
+detailed.summary.wi <- summary(f.scal.subspace.long.wi, level = 5)
 str(detailed.summary.wi)
 }
 \keyword{attribute}

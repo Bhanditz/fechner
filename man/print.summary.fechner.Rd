@@ -23,7 +23,7 @@
   values, a summary of the corresponding Fechnerian distance \eqn{G}
   values, the Pearson correlation, the \eqn{C}-index, and the
   comparison level.  Specific summary information details such as
-  individual stimuli pairs with their corresponding \eqn{S}-index and
+  individual stimuli pairs and their corresponding \eqn{S}-index and
   \eqn{G} values can be accessed through assignment (see
   \sQuote{Examples}).
 }
@@ -46,10 +46,10 @@
   cumulation theory and subjective metrics. \emph{Journal of
   Mathematical Psychology}, \bold{51}, 290--304.
 
-  Kiefer, T. and Uenlue, A. and Dzhafarov, E. N.
+  Uenlue, A. and Kiefer, T. and Dzhafarov, E. N.
   (2009) Fechnerian scaling in \R: The package \pkg{fechner}.
-  Manuscript submitted for publication.
-  \url{http://www.math.uni-augsburg.de/~uenlueal/}
+  \emph{Journal of Statistical Software}, \bold{31}(6), 1--24.
+  URL \url{http://www.jstatsoft.org/v31/i06/}.
 }
 \seealso{
   \code{\link{plot.fechner}}, the S3 method for plotting objects of

@@ -2,11 +2,11 @@
 ##summary method for objects of class "fechner"##
 #################################################
 summary.fechner <-
-function(object, level = 1, ...){
+function(object, level = 2, ...){
 	# object: an object of class "fechner", obtained from a call to function fechner
-	# level: the 'level' of comparison of overall Fechnerian distance, G, and S-index, S; it refers to, the minimum number
-	#        of edges in geodesic loops plus 1; that is, choosing level n means that comparison involves only those G and
-	#        and S values that have geodesic loops containing not less than n - 1 edges
+	# level: the 'level' of comparison of overall Fechnerian distance, G, and S-index, S; it refers to the minimum number
+	#        of links in geodesic loops; that is, choosing level n means that comparison involves only those G and
+	#        and S values that have geodesic loops containing not less than n links
 	# ...: further arguments to be passed to or from other methods; they are ignored in this function
 
 	if (mode(level) != "numeric")
@@ -15,25 +15,25 @@ function(object, level = 1, ...){
 		stop("level must be finite, i.e., not be NA, NaN, Inf, or -Inf")
 	if (as.integer(level) != level)
 		stop("level must be integer")
-	if (level < 1)
-		stop("level must be greater-equal 1")
+	if (level < 2)
+		stop("level must be greater than or equal to 2")
 
 	if (attr(object, which = "computation", exact = TRUE) == "short"){  # corresponds to "fechner" object resulting from short computation
 		G <- object$overall.Fechnerian.distances  # obtained from computations of the first kind
 		S <- object$S.index
-		number.edges <- object$graph.lengths.of.geodesic.loops  # obtained from computations of the first kind
+		number.links <- object$graph.lengths.of.geodesic.loops  # obtained from computations of the first kind
 	} else
 		if (attr(object, which = "computation", exact = TRUE) == "long"){  # corresponds to "fechner" object resulting from long computation
 			G <- object$overall.Fechnerian.distances.1  # obtained from computations of the first kind
 			S <- object$S.index
-			number.edges <- object$graph.lengths.of.geodesic.loops.1  # obtained from computations of the first kind
+			number.links <- object$graph.lengths.of.geodesic.loops.1  # obtained from computations of the first kind
 		} else
 			stop("object attribute computation must have value \"short\" or \"long\"")
 
-	pairs <- (number.edges[upper.tri(number.edges)] >= (level - 1))
+	pairs <- (number.links[upper.tri(number.links)] >= level)
 	if (!any(pairs))
 		stop(paste("summary is not possible: there are no (off-diagonal) pairs of stimuli with geodesic loops containing at least ",
-				   level - 1, " edges", sep = ""))
+				   level, " links", sep = ""))
 	G.level <- G[upper.tri(G)][pairs]
 	S.level <- S[upper.tri(S)][pairs]
 
