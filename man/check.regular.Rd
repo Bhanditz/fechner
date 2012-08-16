@@ -97,9 +97,7 @@ check.regular(X, type = c("probability.different", "percent.same",
     original data \code{X} are already in the canonical form.}
 }
 \author{
-  Thomas Kiefer \email{thomas.kiefer@student.uni-augsburg.de},
-  Ali Uenlue \email{ali.uenlue@math.uni-augsburg.de}.  Based on
-  original MATLAB source by Ehtibar N. Dzhafarov.
+  Thomas Kiefer, Ali Uenlue.  Based on original MATLAB source by Ehtibar N. Dzhafarov.
 }
 \references{
   Dzhafarov, E. N. and Colonius, H. (2006) Reconstructing

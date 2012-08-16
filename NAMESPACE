@@ -1,3 +1,4 @@
+useDynLib(fechner)
 export(check.data, check.regular, fechner)
 
 # internal functions; not intended to be visible to users

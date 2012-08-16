@@ -166,9 +166,7 @@ fechner(X, format = c("probability.different", "percent.same", "general"),
     (last component of long computation list)}
 }
 \author{
-  Thomas Kiefer \email{thomas.kiefer@student.uni-augsburg.de},
-  Ali Uenlue \email{ali.uenlue@math.uni-augsburg.de}.  Based on
-  original MATLAB source by Ehtibar N. Dzhafarov.
+  Thomas Kiefer, Ali Uenlue.  Based on original MATLAB source by Ehtibar N. Dzhafarov.
 }
 \references{
   Dzhafarov, E. N. and Colonius, H. (2006) Reconstructing

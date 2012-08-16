@@ -58,9 +58,7 @@ check.data(X, format = c("probability.different", "percent.same",
   If the data are of required format, \code{check.data} returns a
   matrix of the data with rows and columns labeled.}
 \author{
-  Thomas Kiefer \email{thomas.kiefer@student.uni-augsburg.de},
-  Ali Uenlue \email{ali.uenlue@math.uni-augsburg.de}.  Based on
-  original MATLAB source by Ehtibar N. Dzhafarov.
+  Thomas Kiefer, Ali Uenlue.  Based on original MATLAB source by Ehtibar N. Dzhafarov.
 }
 \references{
   Dzhafarov, E. N. and Colonius, H. (2006) Reconstructing
