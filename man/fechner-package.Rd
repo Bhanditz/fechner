@@ -17,8 +17,8 @@
   \tabular{ll}{
     Package: \tab \pkg{fechner}\cr
     Type: \tab Package\cr
-    Version: \tab 1.0-2\cr
-    Date: \tab 2012-08-16\cr
+    Version: \tab 1.0-3\cr
+    Date: \tab 2016-06-05\cr
     License: \tab \acronym{GPL} (>= 2)
   }
   Fechnerian scaling of discrete object (or stimulus) sets provides a

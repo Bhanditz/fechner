@@ -10,11 +10,11 @@ citEntry(entry = "Article",
   volume       = "31",
   number       = "6",
   pages        = "1--24",
-  url          = "http://www.jstatsoft.org/v31/i06/",
+  url          = "https://www.jstatsoft.org/article/view/v031i06",
 
   textVersion  =
   paste("Ali Uenlue, Thomas Kiefer, Ehtibar N. Dzhafarov (2009).",
         "Fechnerian Scaling in R: The Package fechner.",
         "Journal of Statistical Software, 31(6), 1-24.",
-        "URL http://www.jstatsoft.org/v31/i06/.")
+        "URL https://www.jstatsoft.org/article/view/v031i06.")
 )
